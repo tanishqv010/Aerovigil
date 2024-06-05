@@ -3,12 +3,13 @@
 Don't hesitate to ⭐ the repo if you enjoy our work !
 
 ## Table of Content :
-- [I. Objective](https://github.com/tanishqv010/Aerovigil/edit/main/README.md#i-objective)
-- [II. Features](https://github.com/tanishqv010/Aerovigil/edit/main/README.md#ii-features)
-- [III. Methodology](https://github.com/tanishqv010/Aerovigil/edit/main/README.md#iii-methodology)
-- [IV. Circuit](https://github.com/tanishqv010/Aerovigil/edit/main/README.md#vi-circuit)
-- [V. Data Sources](https://github.com/tanishqv010/Aerovigil/edit/main/README.md#v-data-sources)
-- [VI. Model](https://github.com/tanishqv010/Aerovigil/edit/main/README.md#vi-model)
+- [I. Objective](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#i-objective)
+- [II. Features](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#ii-features)
+- [III. Methodology](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#iii-methodology)
+- [IV. Circuit](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#vi-circuit)
+- [V. Data Sources](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#v-data-sources)
+- [VI. Model](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#vi-model)
+- [VII. Requirements](https://github.com/tanishqv010/Aerovigil?tab=readme-ov-file#vii-requirements)
 
 ## I. Objective
 The primary objective of this project is to develop a surveillance system using a custom-built drone equipped with advanced sensors. The system aims to monitor vegetation-rich areas, particularly forests, to detect potential forest fires at an early stage. The key focus is on providing a reliable and efficient solution for early warning and intervention, ultimately minimising the damage caused by forest fires.
@@ -49,8 +50,8 @@ The primary objective of this project is to develop a surveillance system using 
 - Ensure seamless communication and interoperability between different components.
 
 ## IV. Circuit
-The following image shows the circuit diagram of the sensor based circuit used to gather the enviornmental data to predict the forest fires.
-![image](/*link for image*/)
+The following image shows the circuit diagram of the sensor based circuit used to gather the enviornmental data to predict the forest fires.<br/>
+![image](https://github.com/tanishqv010/Aerovigil/blob/main/Static/Circuit.png)
 
 ## V. Data Sources
 We made some alterations in the dataset of burned area of forest fires, in the East Portugal region, available on the UCI Machine Learning Repository.
@@ -65,3 +66,11 @@ And we are predicting the Categorical Variable
 
 ## VI. Model
 On the above given dataset, we trained a Random Forest Classifier and fine-tuned it using Bayesian Optimization Technique and achieved an accuracy of 66.35%
+
+## VII. Requirements
+- Drone / Parts to make Drone
+- Arduino UNO
+- HC-05 Bluetooth Module
+- SHT-20 Humidity and Temperature Sensor Probe
+- MQ-2 Smoke Sensor
+- Bread Board
