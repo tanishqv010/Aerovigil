@@ -21,12 +21,17 @@ The primary objective of this project is to develop a surveillance system using 
 - Integrate gas sensors to identify early signs of smoke or combustible gases.
 
 2. **Real-time Data Transmission**:
-- Establish a reliable communication system for real-time data transmission from the drone to the ground station.
+- Establish a reliable communication system for real-time data transmission from the drone to the ground station using MQTT protocol over TCP/IP.
 - Implement a secure and efficient data transfer protocol for transmitting surveillance data.
 
 3. **Fire Prediction and Detection**:
-- Implement a machine learning-based fire prediction algorithm using historical data and environmental factors.
+- Implement a machine learning-based fire prediction algorithm using environmental sensor data and live weather parameters like wind speed.
 - Integrate predictive models to assess the likelihood of fire outbreaks based on current conditions.
+- Use a threshold-based system to detect fire based on smoke sensor data.
+
+4. **Weather Data Integration**:
+- Integrate OpenWeatherMap API to fetch real-time wind and rain data from the drone's geographical location.
+- Improve prediction accuracy by incorporating live weather conditions.
 
 4. **Emergency Response System**:
 - Integrate an alert system to notify relevant authorities in the event of a detected forest fire.
@@ -42,15 +47,15 @@ The primary objective of this project is to develop a surveillance system using 
 - Calibrate and test each sensor for optimal performance in a forest environment.
 
 3. **Fire Prediction and Detection Implementation**:
-- Develop and train machine learning models for fire prediction using historical data and environmental factors.
-- Integrate the predictive models with the drone's onboard systems for real-time fire prediction.
+- Deploy pre-trained machine learning models onboard or on a ground station for real-time predictions.
+- Integrate real-time environmental sensor data and weather API responses for enhanced prediction reliability.
 
 4. **System Integration**:
 - Integrate all subsystems, including flight system, sensors, fire prediction, and detection, into a cohesive and unified system.
 - Ensure seamless communication and interoperability between different components.
 
 ## IV. Circuit
-The following image shows the circuit diagram of the sensor based circuit used to gather the enviornmental data to predict the forest fires.<br/>
+The following image shows the circuit diagram of the sensor-based system initially developed using an Arduino. A similar setup, involving the same sensors (MQ-2 for smoke, SHT-20 for temperature and humidity), was later replicated on an ESP32 microcontroller. This transition enabled MQTT-based data transmission over TCP/IP using Wi-Fi for real-time environmental monitoring and fire prediction.<br/>
 ![image](https://github.com/tanishqv010/Aerovigil/blob/main/Static/Circuit.png)
 
 ## V. Data Sources
@@ -65,12 +70,13 @@ And we are predicting the Categorical Variable
 - Forest Fire (1 or 0)
 
 ## VI. Model
-On the above given dataset, we trained a Random Forest Classifier and fine-tuned it using Bayesian Optimization Technique and achieved an accuracy of 66.35%
+On the modified dataset, we trained a Random Forest Classifier and fine-tuned it using the Bayesian Optimization Technique, achieving an accuracy of 66.35%. The trained model is saved and used for real-time prediction using incoming sensor data and weather API responses.
 
 ## VII. Requirements
 - Drone / Parts to make Drone
-- Arduino UNO
-- HC-05 Bluetooth Module
+- ESP32
 - SHT-20 Humidity and Temperature Sensor Probe
 - MQ-2 Smoke Sensor
-- Bread Board
+- Breadboard and wiring components
+- Internet Connectivity for MQTT and Weather API
+- OpenWeatherMap API Key
